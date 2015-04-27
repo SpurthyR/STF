@@ -1,0 +1,71 @@
+extends layout
+
+block content
+
+  .container.proposals-header
+    h2(style='float:left; padding-left: 40px')  Proposals 
+    .dropdown.proposals-dropdown
+      button#dropdownMenu1.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='true', style='margin: 20px') All Years
+        span.caret
+                     
+      ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1', style='margin: 0px')
+        li(role='presentation')
+          a(role='menuitem', tabindex='-1', href='#') 2015
+                           
+        li(role='presentation')
+          a(role='menuitem', tabindex='-1', href='#') 2014
+                           
+        li(role='presentation')
+          a(role='menuitem', tabindex='-1', href='#') 2013
+                           
+        li(role='presentation')
+          a(role='menuitem', tabindex='-1', href='#') 2012
+                     
+  .container
+    table
+      thead
+        tr
+          th  ID 
+                                 
+          th  Title 
+                                 
+          th  Department 
+                                 
+          th  Category 
+                     
+      tbody
+        tr
+          td 2015-061
+                                 
+          td
+            a(href='#')  STF Proposal to purchase Alton a new Porsche 
+                                 
+          td
+            a(href='#') UW Information Technology
+                                 
+          td
+            a(href='#') Frontier Technology
+                           
+        tr
+          td 2015-056
+                                 
+          td
+            a(href='#') Fast Track - Research Equipment for Students at Friday Harbor Laboratories
+                                 
+          td
+            a(href='#') UW Information Technology Friday Harbor Laboratories
+                                 
+          td
+            a(href='#') Machinery &amp; Research
+                           
+        tr
+          td 2015-052
+                                 
+          td
+            a(href='#') X Ray Fluorescence for Materials Science and Anthropology
+                                 
+          td
+            a(href='#') Material Science and Engineering, Department of
+                                 
+          td
+            a(href='#') Machinery &amp; Research
