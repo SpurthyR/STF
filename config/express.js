@@ -28,6 +28,7 @@ module.exports = function(app, config) {
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
+
   controllers.forEach(function (controller) {
     require(controller)(app);
   });
@@ -37,7 +38,7 @@ module.exports = function(app, config) {
     err.status = 404;
     next(err);
   });
-  
+
   if(app.get('env') === 'development'){
     app.use(function (err, req, res, next) {
       res.status(err.status || 500);

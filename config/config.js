@@ -1,6 +1,6 @@
 var path = require('path'),
-    rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development';
+  rootPath = path.normalize(__dirname + '/..'),
+  env = process.env.NODE_ENV || 'development';
 
 var config = {
   development: {
@@ -8,8 +8,8 @@ var config = {
     app: {
       name: 'stf'
     },
-    port: 3000,
-    db: 'mysql://root:Spuriya#2@localhost:3306/StudentTechnologyFee'
+    port: 3001,
+    db: 'mysql://root:root@localhost:3306/STF'
   },
 
   test: {
@@ -18,7 +18,7 @@ var config = {
       name: 'stf'
     },
     port: 1222,
-    db: 'mysql://localhost/stf-test'
+    db: 'mysql://root:root@localhost/stf-test'
   },
 
   production: {
@@ -27,7 +27,7 @@ var config = {
       name: 'stf'
     },
     port: 1244,
-    db: 'mysql://localhost:3306/stf-production'
+    db: 'mysql://root:root@localhost:3306/stf-production'
   }
 };
 

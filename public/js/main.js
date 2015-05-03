@@ -1,5 +1,23 @@
 $(document).ready(function() {
 
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-bottom-right",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+
     var navListItems = $('ul.setup-panel li a'),
         allWells = $('.setup-content');
 
@@ -40,10 +58,35 @@ $(document).ready(function() {
     })
 
     $('#createProposal').on('submit', function(e){
-        
-        $('#createProposal').submit()
-        
 
+        $('#createProposal').submit()
+
+
+    });
+
+
+    $('#updateProposal').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            data: $('#updateProposal').serialize(),
+            method: 'POST',
+            url: $('#updateProposal').attr('action'),
+            success: function(data) {
+                toastr["success"]("Successfully Updated..")
+            }
+        });
+    })
+
+    $('#createItem').on('submit', function(e){
+        e.preventDefault();
+        $.ajax({
+            data: $('#createItem').serialize(),
+            method: 'POST',
+            url: $('#createItem').attr('action'),
+            success: function(data) {
+                toastr["success"]("Item created Successfully.." + JSON.stringify(data))
+            }
+        });
     });
 
     // $('#activate-step-2').on('click', function(e) {
@@ -62,11 +105,11 @@ $(document).ready(function() {
     //     $('ul.setup-panel li:eq(3)').removeClass('disabled');
     //     $('ul.setup-panel li a[href="#step-4"]').trigger('click');
     //     //$(this).remove();
-    // }) 
+    // })
 
     // $('#activate-step-5').on('click', function(e) {
     //     $('ul.setup-panel li:eq(4)').removeClass('disabled');
     //     $('ul.setup-panel li a[href="#step-5"]').trigger('click');
     //     //$(this).remove();
-    // })    
+    // })
 });

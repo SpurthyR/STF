@@ -1,5 +1,3 @@
-
-
 var express = require('express'),
   config = require('./config/config'),
   db = require('./app/models');
@@ -10,9 +8,8 @@ require('./config/express')(app, config);
 
 db.sequelize
   .sync()
-  .then(function () {
+  .then(function() {
     app.listen(config.port);
-  }).catch(function (e) {
+  }).catch(function(e) {
     throw new Error(e);
   });
-
