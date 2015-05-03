@@ -6,25 +6,27 @@ block content
         .metrics
             h2 Metrics  
           #accordion.panel-group
-            .panel.panel-default
-              .panel-heading
-                h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#collapse1') Collaborative         
-              #collapse1.panel-collapse.collapse.collapse
-                .panel-body
-                    - each metric in data.Collaborative
-                        p=metric.Metric
-                     
-            .panel.panel-default
-              .panel-heading
-                h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#collapse2') Computer Labs
+            if data.Collaborative
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a(data-toggle='collapse', data-parent='#accordion', href='#collapse1') Collaborative         
+                  #collapse1.panel-collapse.collapse.collapse
+                    .panel-body
+                        - each metric in data.Collaborative
+                            p=metric.Metric
+             
+            if data.ComputerLabs        
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a(data-toggle='collapse', data-parent='#accordion', href='#collapse2') Computer Labs
+                             
+                  #collapse2.panel-collapse.collapse
+                    .panel-body
+                      - each metric in data.ComputerLabs
+                          p=metric.Metric
                          
-              #collapse2.panel-collapse.collapse
-                .panel-body
-                  - each metric in data.ComputerLabs
-                      p=metric.Metric
-                     
             .panel.panel-default
               .panel-heading
                 h4.panel-title
@@ -61,33 +63,38 @@ block content
                 .panel-body
                   - each metric in data.GeneralStudentAccess
                       p=metric.Metric
-            .panel.panel-default
-              .panel-heading
-                h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#collapse7') Machine/Research
-                         
-              #collapse7.panel-collapse.collapse
-                .panel-body
-                  - each metric in data.MachineResearch
-                      p=metric.Metric
-            .panel.panel-default
-              .panel-heading
-                h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#collapse8') Portable
-                         
-              #collapse8.panel-collapse.collapse
-                .panel-body
-                  - each metric in data.Portable
-                      p=metric.Metric
-            .panel.panel-default
-              .panel-heading
-                h4.panel-title
-                  a(data-toggle='collapse', data-parent='#accordion', href='#collapse9') Remote Computing
-                         
-              #collapse9.panel-collapse.collapse
-                .panel-body
-                  - each metric in data.RemoteComputing
-                      p=metric.Metric
+            if data.MachineResearch
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a(data-toggle='collapse', data-parent='#accordion', href='#collapse7') Machine/Research
+                             
+                  #collapse7.panel-collapse.collapse
+                    .panel-body
+                      - each metric in data.MachineResearch
+                          p=metric.Metric
+            
+            if data.Portable
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a(data-toggle='collapse', data-parent='#accordion', href='#collapse8') Portable
+                             
+                  #collapse8.panel-collapse.collapse
+                    .panel-body
+                      - each metric in data.Portable
+                          p=metric.Metric
+            
+            if data.RemoteComputing
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a(data-toggle='collapse', data-parent='#accordion', href='#collapse9') Remote Computing
+                             
+                  #collapse9.panel-collapse.collapse
+                    .panel-body
+                      - each metric in data.RemoteComputing
+                          p=metric.Metric
 
     .col-sm-2
     .col-sm-7

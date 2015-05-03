@@ -1,10 +1,13 @@
 // Example model
-
+var Item = require('item');
 
 module.exports = function (sequelize, DataTypes) {
 
   var Proposal = sequelize.define('Proposal', {
-    ProposalCode: DataTypes.STRING,
+    ProposalCode: {
+      type:DataTypes.STRING,
+      primary: true
+    },
     ProposalTitle: DataTypes.STRING,
     Category: DataTypes.STRING,
     Department: DataTypes.STRING,
@@ -51,11 +54,12 @@ module.exports = function (sequelize, DataTypes) {
       validate: {max: 500}
     },
     InstallationTimeline: DataTypes.STRING(45),
-    Status: DataTypes.STRING(45)
+    Status: DataTypes.STRING(45),
 
   }, {
     classMethods: {
       associate: function (models) {
+        Proposal.hasOne(Item);
         // example on how to add relations
         // Article.hasMany(models.Comments);
       }
