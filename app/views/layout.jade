@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport', content='width=device-width, , initial-scale=1')
+    title= title
+    link(rel='apple-touch-icon' href='apple-touch-icon.png')
+    block css
+      link(rel='stylesheet', href='/css/style.css')
+      link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+      link(rel='stylesheet', href='/css/normalize.css')
+      link(rel='stylesheet', href='/css/main.css')
+      link(rel='stylesheet', href='/css/tostr.css')
+  body
+    include partials/header
+
+    block content
+
+    block js
+      script(src='http://localhost:35729/livereload.js')
+      script(src='/js/vendor/modernizr-2.8.3.min.js')
+      script(src='/js/vendor/bootstrap-slider.js')
+      script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+      script(src='/js/vendor/tostr.js')
+      script(src='/js/plugins.js')
+      script(src='/js/main.js')
+
