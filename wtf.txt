@@ -1,0 +1,136 @@
+My understanding so far as to how all this bullshit functions
+
+~~~~~~~~~~~~~~~~~~~~~~~MODULES~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Name:          Bluebird
+Usefulness:    Bullshit
+Chance of Use: None
+Notes:         Bluebird is a "promise manager," whatever the fuck that means. I think it's code for 
+               useless and bullshit. As far as I can tell, the thing lets you change somewhat verbose
+               code and turn it into shorter, far more unreadable code. I will never use this
+
+
+Name:          Body Parser
+Usefulness:    Unknown
+Chance of Use: Liekly
+Notes:         This thing takes data objects like JSON and raw text and turns them into raw text (or
+               HTML or sometyhing else, the documentation is awful)
+
+
+Name:          Compression
+Usefulness:    Practically None
+Chance of Use: Almost Zero
+Notes:         Compresses things. Why would we need to comrpess things!?!?
+
+
+Name:          Cookie Parser
+Usefulness:    Potential?
+Chance of Use: Maybe?
+Notes:         Takes cookie data and turns it into JSON data and the like. I'm just confused why we
+               would ever take that much data and stick it in a cookie for someone to keep on their
+               local machine...
+
+
+Name:          Express
+Usefulness:    I would still argue it's annoying...
+Chance of Use: Certain
+Notes:         Express runs the whole app. It's likely responsible for the folder setup and all
+               that jazz. Express does do everything for you in a nice fashion though.
+
+
+Name:          Glob
+Usefulness:    Small
+Chance of Use: Likely
+Notes:         A simnple module that lets us search for things like *.js. The documentation
+               references Adventure time though
+
+
+Name:          Grunt
+Usefulness:    Super Useful
+Chance of Use: Certain
+Notes:         Grunt runs automated tasks, both on time bases, and on events. This is the thing
+               that will update the LESS files whenever they're changed, runs tasks automagically,
+               and does a variety of other things. It has plenty of smaller grunt scripts that plug
+               into it to automate even more tasks ont eh site. Grunt seems highly useful and well
+               made. 
+
+
+Name:          Grunt Contrib Less
+Usefulness:    Super Duper
+Chance of Use: Certain
+Notes:         Grunt script that compiles less
+
+
+Name:          Grunt contrib Watch
+Usefulness:    Super
+Chance of Use: Certain
+Notes:         Watches files for changes to update them
+
+
+Name:          Jade
+Usefulness:    Alright (necessary)
+Chance of Use: Certain
+Notes:         I have my quibble with teh language itself, but Jade is what turns the markups into 
+               HTML (which NORMAL PEOPLE USE, might I add...). Whatever, it's experience.
+
+
+Name:          Load Grunt Tasks
+Usefulness:    High
+Chance of Use: Certain
+Notes:         Stops me from typing all the locations for grunt tasks. small time saver. Why is it
+               not named Grunt Load Tasks though...????
+
+
+Name:          Lodash
+Usefulness:    Supreme
+Chance of Use: Almost zero
+Notes:         A selection of really really cool functions, abilities, modularities and features. 
+               The whole thing would make coding js in both node and backend super easy, simple, 
+               and fast... If I had the time to learn it. The functions offered are simply amazing
+               but I'm almost certain I won't use a single part of it.
+
+
+Name:          Method Override
+Usefulness:    None
+Chance of Use: None
+Notes:         As from stack overflow: "If you pass in the _method post parameter set to 'delete' 
+               or 'put', then you can use app.delete and app.put in Express instead of using 
+               app.post all the time (thus more descriptive, verbose)". Useless
+
+
+Name:          Morgan
+Usefulness:    Pretty good
+Chance of Use: Likely
+Notes:         Logs stuff to files and the console. Seems alright.
+
+
+Name:          MySQL
+Usefulness:    Super
+Chance of Use: Certain
+Notes:         Does all the sql bullshit. Pretty self explanatory
+
+
+Name:          Request
+Usefulness:    High
+Chance of Use: Likely
+Notes:         It gets HTTP pages. Really short, small, and usefull. Follows redirects and
+               everything. I'll be this is how we're changing pages in teh middle of a page.
+
+
+Name:          Sequelize
+Usefulness:    ????
+Chance of Use: Currently using so...
+Notes:         Object oriented databse interaction. WHY ARE WE NOT JUST USING MYSQL FUNCTIONS??????
+
+
+Name:          Favicon Serve
+Usefulness:    Practically None
+Chance of Use: Likely
+Notes:         Serves favicons. *facepalm*
+
+Name:          Time Grunt
+Usefulness:    Fair
+Chance of Use: Certain
+Notes:         Runs grunt stuff and says how long it takes
+

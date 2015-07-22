@@ -9,8 +9,8 @@ var fs = require('fs'),
 //   storage: config.storage
 // });
 
-var sequelize = new Sequelize('StudentTechnologyFee', 'root', 'Spuriya#2', {
-  host: "localhost",
+var sequelize = new Sequelize('test', 'root', 'STFP@ss', {
+  host: "127.0.0.1",
   port: 3306
 })
 

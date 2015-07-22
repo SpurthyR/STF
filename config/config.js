@@ -9,7 +9,7 @@ var config = {
       name: 'stf'
     },
     port: 3000,
-    db: 'mysql://root:Spuriya#2@localhost:3306/StudentTechnologyFee'
+    db: 'mysql://root:STFP@ss@localhost:3306/test'
   },
 
   test: {
