@@ -1,15 +1,15 @@
-var fs = require('fs'),
-  path = require('path'),
-  Sequelize = require('sequelize'),
-  config = require('../../config/config'),
-  db = {};
+var fs = require('fs');
+var path = require('path');
+var sequelize = require('sequelize');
+var config = require('../../config/config');
+var db = {};
 
-// var sequelize = new Sequelize("mysql://root:Spuriya#2@localhost:3306/StudentTechnologyFee"
+// var sequelize = new sequelize("mysql://root:Spuriya#2@localhost:3306/StudentTechnologyFee"
 // , {
 //   storage: config.storage
 // });
 
-var sequelize = new Sequelize('test', 'root', 'STFP@ss', {
+var sequelize = new sequelize('test', 'root', 'STFP@ss', {
   host: "127.0.0.1",
   port: 3306
 })
@@ -29,6 +29,5 @@ Object.keys(db).forEach(function (modelName) {
 });
 
 db.sequelize = sequelize;
-db.Sequelize = Sequelize;
 
 module.exports = db;

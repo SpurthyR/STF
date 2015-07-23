@@ -1,53 +1,51 @@
-var express = require('express'),
-  router = express.Router(),
-  db = require('../models');
+var express = require('express');
+var router = express.Router();
+var db = require('../models');
 
 module.exports = function(app) {
-  app.use('/', router);
+	app.use('/', router);
 };
 
 router.get('/', function(req, res, next) {
-  res.render('index');
+	res.render('index');
 });
 
 router.get('/browse-proposals', function(req, res, next) {
-	db.Proposal.findAll().success(function(proposals){
+	db.Proposal.findAll().success(function(proposals) {
 		res.render('browse-proposals',{
 			proposals: proposals
 		});
 	});
+});
 
-	 });
-
-router.get('/proposal/:id', function(req,res,next){
+router.get('/proposal/:id', function(req,res,next) {
 	db.Proposal.find({
 		where: {
 			id: req.params.id
 		}
-	}).then(function(proposal){
+	}).then(function(proposal) {
 		db.Metric.findAll().then(function(portableMetrics) {
 			var data = {};
-			console.log(proposal.dataValues.Category)
-			console.log(proposal)
-	    	portableMetrics.forEach(function(val, index) {
-	      	if (val['category'].match(/General.*/) 
-	      		|| val['category'] === proposal.Category){
-	      		if (data[val['category']] == undefined) {
-	      			data[val['category']] = [];
-	      		}
-	        data[val['category']].push({
-	          category: val['category'],
-	          Metric: val['Metric']
-	        });
-	      }
-	  });
-		res.render('proposal', {
-			proposal : proposal,
-			data : data
+			console.log(proposal.dataValues.Category);
+			console.log(proposal);
+			portableMetrics.forEach(function(val, index) {
+				if (val['category'].match(/General.*/) || val['category'] === proposal.Category) {
+					if (data[val['category']] === undefined) {
+						data[val['category']] = [];
+					}
+					data[val['category']].push({
+						category: val['category'],
+						Metric: val['Metric']
+					});
+				}
+			});
+			res.render('proposal', {
+				proposal : proposal,
+				data : data
+			});
 		});
 	});
 });
-	});
 // router.get('/article', function(req, res, next) {
 //   db.Article.findAll().success(function(articles) {
 //     res.render('article', {

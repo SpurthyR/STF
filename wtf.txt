@@ -1,4 +1,24 @@
-My understanding so far as to how all this bullshit functions
+My understanding so far as to how all this stuff functions
+
+
+~~~~~~~~~~~~~~~~~~~EXPRESS  FORMAT~~~~~~~~~~~~~~~~~~~
+
+controllers  – defines your app routes and their logic. Handles web requests, serve tamplates to 
+               users, interacts with models to retreive and process data. The glue that connects
+               and controls the web app. NEVER directly call a database.
+helpers      – code and functionality to be shared by different parts of the project. Utility code,
+               like for dates and times, that can be called from anywhere.
+middlewares  – Express middlewares which process the incoming requests before handing them down 
+               to the routes
+models       – represents data, implements business logic and handles storage. Interacts with
+               databases. Good to have at least one for each type of data in database. Does stuff
+               like creating, reading, updating and eleting database items.
+public       – contains all static files like images, styles and javascript
+views        – provides templates which are rendered and served by your routes. "where the 
+               designers work." Don't do data processing in the views, do that in controllers.
+tests        – tests everything which is in the other folders
+app.js       – initializes the app and glues everything together
+package.json – remembers all packages that your app depends on and their versions
 
 ~~~~~~~~~~~~~~~~~~~~~~~MODULES~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -6,9 +26,8 @@ My understanding so far as to how all this bullshit functions
 Name:          Bluebird
 Usefulness:    Bullshit
 Chance of Use: None
-Notes:         Bluebird is a "promise manager," whatever the fuck that means. I think it's code for 
-               useless and bullshit. As far as I can tell, the thing lets you change somewhat verbose
-               code and turn it into shorter, far more unreadable code. I will never use this
+Notes:         Bluebird is a "promise manager," used to avoid asynch hell. It makes unreadable
+               async not undreadable. Apparently pretty important. I should look into this.
 
 
 Name:          Body Parser
