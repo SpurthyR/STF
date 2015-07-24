@@ -10,9 +10,9 @@ router.get('/', function(req, res, next) {
 	res.render('index');
 });
 
-router.get('/browse-proposals', function(req, res, next) {
+router.get('/proposals/browse', function(req, res, next) {
 	db.Proposal.findAll().success(function(proposals) {
-		res.render('browse-proposals',{
+		res.render('proposals/browse',{
 			proposals: proposals
 		});
 	});

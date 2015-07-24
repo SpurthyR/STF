@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Hello World! Welcome to #{title}
+	.container
+		h1= title
+		p Hello World! Welcome to #{title}
+		if (true)
+			p lololol
+			- var n = 0
+			while n < 5
+				p= 'what the ducketh ' + n
+				- n = n + 2
+		p.
+			lololololol?
+			dksoadkosakdjsoadjsaodjasodsa??????
+			dsajdisajid?DSajdisajdias sa D?AS das? DASQd as?D AS
+
+//- block js
+//- 	script(src='http://localhost:35729/livereload.js')
+
+//- block css
+//- 	link(rel='stylesheet', href='/css/tostr.css')

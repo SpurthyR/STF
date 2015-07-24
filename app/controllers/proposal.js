@@ -15,7 +15,7 @@ router.get('/proposal', function(req, res, next) {
 
 
 router.get('/proposals/new', function(req, res, next) {
-	res.render('proposal/create');
+	res.render('proposals/create');
 });
 
 router.get('/proposals/:id', function(req, res) {
@@ -31,7 +31,7 @@ router.get('/proposals/:id', function(req, res) {
 		}).then(function(item){
 			console.log("item:");
 			console.log(item)
-			res.render('proposal/update', {
+			res.render('proposals/update', {
 				proposal: proposal,
 				items: item
 			});

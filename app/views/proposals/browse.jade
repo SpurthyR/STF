@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+
+	.container
+		.proposals-header
+			h2(style='float:left; padding-left: 40px')  Proposals 
+			.dropdown.proposals-dropdown
+				button#dropdownMenu1.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='true', style='margin: 20px') All Years
+					span.caret
+
+				ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1', style='margin: 0px')
+					li(role='presentation')
+						a(role='menuitem', tabindex='-1', href='#') 2015
+
+					li(role='presentation')
+						a(role='menuitem', tabindex='-1', href='#') 2014
+
+					li(role='presentation')
+						a(role='menuitem', tabindex='-1', href='#') 2013
+
+					li(role='presentation')
+						a(role='menuitem', tabindex='-1', href='#') 2012
+
+	.container
+		table
+			thead
+				tr
+					th ID 
+					th Title
+					th Department
+					th Category
+			tbody
+				- each proposal in proposals
+					tr
+						td #{proposal.id}
+						td: a(href='proposal/#{proposal.id}') #{proposal.ProposalTitle} 
+						td: a(href='#') #{proposal.Department}																	 
+						td: a(href='#') #{proposal.Category}
