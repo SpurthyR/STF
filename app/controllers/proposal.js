@@ -8,13 +8,13 @@ module.exports = function(app) {
 	app.use('/', router);
 };
 
-router.get('/proposal', function(req, res, next) {
+/*router.get('/proposals', function(req, res, next) {
 	res.render('proposals');
 });
+*/
 
 
-
-router.get('/proposals/new', function(req, res, next) {
+router.get('/proposals/create', function(req, res, next) {
 	res.render('proposals/create');
 });
 
@@ -29,8 +29,8 @@ router.get('/proposals/:id', function(req, res) {
 				ProposalCode: req.params.id
 			}
 		}).then(function(item){
-			console.log("item:");
-			console.log(item)
+			//console.log("item:");
+			//console.log(item)
 			res.render('proposals/update', {
 				proposal: proposal,
 				items: item

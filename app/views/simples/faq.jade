@@ -1,0 +1,44 @@
+extends ../layout
+
+append js
+	script(src='/js/faq.js')
+
+append css
+	link(rel='stylesheet', href='/css/faq.css')
+
+
+block content
+	.jumbotron(style='background: url(img/faq.jpg); background-position: center 50%; background-repeat: no-repeat; background-size: cover;')
+		.container
+			h1= title
+			p#simple-first A list of supplemental, common questions
+
+	.container
+		.row
+			.col-md-9.col-xs-12.faq
+				a.anchor-name(name='students'): h2 General
+				each val in faqs['students']
+					a.anchor-name(name='#{val["q"]}')
+						h4 !{val['q']}
+					p !{val['a']}
+
+				hr
+				a.anchor-name(name='authors'): h2 Proposal Authors
+				each val in faqs['authors']
+					a.anchor-name(name='#{val["q"]}') 
+						h4 !{val['q']}
+					p !{val['a']}
+
+			.col-md-3.hidden-xs.hidden-sm.sidebar.hidden-print
+				h3 Jumplist
+				ul.no-style.jumplist
+
+					hr
+					a(href='#students'): h4 General
+					each val in faqs['students']
+						li: a(href='##{val["q"]}') !{val['q']}
+
+					hr
+					a(href='#authors'): h4 Proposal Authors
+					each val in faqs['authors']
+						li: a(href='##{val["q"]}') !{val['q']}

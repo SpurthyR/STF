@@ -7,7 +7,9 @@ module.exports = function(app) {
 };
 
 router.get('/', function(req, res, next) {
-	res.render('index');
+	res.render('index', {
+		title : 'Student Technology Fee'
+	});
 });
 
 router.get('/proposals/browse', function(req, res, next) {
@@ -39,7 +41,7 @@ router.get('/proposal/:id', function(req,res,next) {
 					});
 				}
 			});
-			res.render('proposal', {
+			res.render('proposals/proposal', {
 				proposal : proposal,
 				data : data
 			});

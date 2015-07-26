@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+	.jumbotron(style='background: url(img/contact.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;')
+		.container
+			h1(style='color: #FFFFFF')= title
+
+	.container
+		p#simple-first.
+			We're here if you need us. Before reaching out, please consider learning
+			more #[a(href='/about') about the STF] first, and then viewing our
+			#[a(href='/faq') Frequently Asked Questions]. Otherwise, feel free to contact
+			us at any of the locations below.
+		- n = 0
+		.row
+			while n < contacts.length
+				.col-xs-12.col-sm-6.col-md-4
+					ul.no-style
+						li #{contacts[n]['name'] + ' | ' + contacts[n]['title']}
+						li: a(href='mailto:' + contacts[n]['email']) #{contacts[n]['email']}
+						- n++
+		h3 Physical Location
+		ul.no-style
+			li University of Washington
+			li Husky Union Building, RM 305B
+			li 4001 NE Stevens Way
+			li Seattle, WA 98195

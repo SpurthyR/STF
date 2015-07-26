@@ -1,0 +1,37 @@
+extends layout
+
+append css
+	link(rel='stylesheet', href='/css/docs.css')
+
+append js
+	script(src='/js/docs.js')
+
+block content
+	if loc == 'home'
+		.jumbotron(style='background: url(img/docs.jpg); background-position: center 20%; background-repeat: no-repeat; background-size: cover;')
+			.container
+				h1= title
+				p View minutes, policies, and guiding documents of the STF Committee
+
+		.container
+			.row
+				.col-xs-12.col-md-3.sidebar.sidebar-wrap
+					h3 Directory
+					ul.no-style.jumplist
+
+						hr
+						li HELLO WORLD
+
+				.col-md-9.hidden-xs.hidden-sm
+					h2 About
+					p.
+						This is the STF Documents Archive. Here, you may view all
+						official documents created by the STF Committee and leadership.
+						These include meeting minutes, presentation documents, agendas,
+						guiding documents, policies and procedures, findings,
+					p.
+						Minutes from past meetings are posted at most a week after their
+						approval at the meeting after their date.
+
+	else 
+	//- we put all the files here

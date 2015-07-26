@@ -1,27 +1,33 @@
 extends layout
 
 block content
-    .jumbotron(style='background: url(img/background.jpg)')
-      .container
-        h1 STF | Student Technology Fee               
-        p              
-        p
-          a.link-button Learn more &gt; 
-    // Grid
-    .container
-      .row
-        .col-sm-9
-          h2 About                       
-          p.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.                      
-          p.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.                    
-        .col-sm-3(style='background-color:#FAFAFA;')
-          h3  Announcements                        
-          p.
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-            veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+		.jumbotron(style='background: url(img/index.jpg); background-position: center 40%; background-repeat: no-repeat; background-size: cover;')
+			.container
+				h1= title
+		// Grid
+		.container
+			.row
+				.col-sm-9
+					h2 About
+					p.
+						The Student Technology Fee and its committee appropriate over $4
+						million to the students of the University of Washington. Every 
+						student enrolled at UW pays a small fee per quarter, which is 
+						aggregated and then paid out to supplement the technological 
+						requirements of the student body.
+					a(href='/about') Read More &gt
+
+				.col-sm-3(style='background-color:#FAFAFA;')
+					div
+						h3 Announcements
+						p.
+							Welcome to our new website! The dust is still settling, so be 
+							sure to #[a(href='mailto:bbkolton@uw.edu?Subject=STF%20Web%20Feedback') email]
+							if anything is awry!
+					h3 Upcoming Meetings
+					ul.no-style
+						li February 30th
+						li September 31st
+						li November 32nd
+					a(href="/calendar") View All Events
 

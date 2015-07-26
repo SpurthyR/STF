@@ -1,0 +1,23 @@
+.jumbotron h1, .jumbotron p  {
+	color: #FFFFFF;
+}
+
+.sidebar {
+	background-color: #EEEEEE;
+	border-radius: 4px;
+}
+
+h2 {
+	margin-bottom: 20px;
+}
+
+.faq h4 {
+	margin-top: 24px;
+}
+
+.faq p {
+	margin-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: justify;
+}

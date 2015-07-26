@@ -14,6 +14,12 @@ html(lang='en')
 			link(rel='stylesheet', href='/css/tostr.css')
 			link(rel='stylesheet', href='/css/new.css')
 
+	body
+
+		include partials/header
+
+		block content
+
 		block js
 			script(src='http://localhost:35729/livereload.js')
 			script(src='/js/vendor/modernizr-2.8.3.min.js')
@@ -23,11 +29,4 @@ html(lang='en')
 			script(src='/js/vendor/tostr.js')
 			script(src='/js/plugins.js')
 			script(src='/js/main.js')
-
-	body
-
-		include partials/header
-
-		block content
-
 

@@ -1,9 +1,10 @@
-extends layout
+extends ../layout
 
 block content
-	.jumbotron(style='background: url(img/about.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;')
+	.jumbotron(style='background: url(img/about.jpg); background-position: center 50%; background-repeat: no-repeat; background-size: cover;')
 		.container
-			h1(style='color: #FFFFFF')= title
+			h1= title
+			p#simple-first Everything to know about your tech fee
 
 	.container
 		p#simple-first.
@@ -11,14 +12,14 @@ block content
 			matriculated students of the University of Washington. The Tech fee pays 
 			for technological additional technological needs of students, both in
 			and out of their regular classes.	The STF was created under the power
-			given by the Washington State	Legislature's 
+			given by the Washington State Legislature's 
 			#[a(href='http://apps.leg.wa.gov/RCW/default.aspx?cite=28b.15.051') Technology Fee]
 			article, and the University of Washington's Board of Regents.
 		h2 The Committee
 		p.
 			The money brought in by The Student Technology Fee is appropriated by the
 			STF Committee. A group of ten members, appointed by both the 
-			#[a(href='asuw.org') Associated Students of the University of Washington], 
+			#[a(href='http://asuw.org') Associated Students of the University of Washington], 
 			and the 
 			#[a(href='http://depts.washington.edu/gpss/home') Graduate and Professional Student Senate],
 			accepts proposals for the expenditure of STF funds. Throughout the 
@@ -35,7 +36,7 @@ block content
 			for students only.  
 		h2 Examples
 		.row
-			ul.no-style
+			ul
 				each val in examples
 					.col-xs-12.col-sm-6.col-md-4
 						li= val
