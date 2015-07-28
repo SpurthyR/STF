@@ -1,1 +1,5 @@
-alert("HELLO")
+//(function(){
+	window.addEventListener('load', function(){
+		
+	})
+//})();

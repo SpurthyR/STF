@@ -8,7 +8,7 @@ var config = {
 		app: {
 			name: 'stf'
 		},
-		port: 3000,
+		port: 80,
 		db: 'mysql://root:STFP@ss@localhost:3306/test'
 	},
 

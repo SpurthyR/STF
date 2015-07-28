@@ -1,8 +1,23 @@
 .sidebar-wrap {
 	background-color: #EEEEEE;
 	height: 100%;
+	margin-bottom: 15px;
+	padding-bottom: 5px;
 }
 
 .jumbotron {
 	margin-bottom: 0px;
+}
+
+.message {
+	color: #777777 !important; 
+	font-style: italic;
+}
+
+#go-up {
+	margin-left: 0px;
+}
+
+.jumplist img {
+	height: 12px;
 }

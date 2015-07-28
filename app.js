@@ -5,6 +5,7 @@ var logger = require('morgan'); //logs things to files
 var cookieParser = require('cookie-parser'); //no explanation needed
 var bodyParser = require('body-parser'); //parses json, html, etc to html
 var compress = require('compression'); //compresses files and output to users
+var passport = require('passport'); //user authentication
 
 var config = require('./config/config'); //configuration file 
 var db = require('./app/models'); //database connections
@@ -44,6 +45,13 @@ var controllers = glob.sync(config.root + '/app/controllers/*.js');
 controllers.forEach(function assignController(controller) {
 	require(controller)(app);
 });
+
+/*var SamlStrategy = require('passport-saml').Strategy;
+passport.use(new SamlStrategy(
+	{
+		path
+	})
+);*/
 
 
 app.use(function fileNotFound(req, res, next) {

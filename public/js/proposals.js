@@ -69,7 +69,8 @@ $(document).ready(function() {
     })
 
     // $('#addItem').on('submit', function(e){
-    //     console.log("Add Item Main.js Called");
+    //     console.log("Add Item proposals.js
+ Called");
     //     $('#addItem').submit();
     //     console.log("submitted");
         
