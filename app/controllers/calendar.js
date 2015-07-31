@@ -1,6 +1,7 @@
+//prepares and shows the clanedar
+
 var express = require('express');
 var	router = express.Router();
-//var	db = require('../models');
 
 module.exports = function(app) {
 	app.use('/', router);

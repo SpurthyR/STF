@@ -1,4 +1,4 @@
-extends layout
+extends head
 
 append css
 	link(rel='stylesheet', href='/css/docs.css')
@@ -14,16 +14,16 @@ block content
 
 	.container#docs
 		.row
-			.col-xs-12.col-md-3.sidebar.sidebar-wrap
+			.col-xs-12.col-sm-3.sidebar.sidebar-wrap
 				h3= folderName
 				ul.no-style.jumplist
 					hr
 					if goUp
 						li#go-up: a.message(href='./') #[img(src='/img/icons/folderOpen.png')] Up One Folder
 					each val in folders
-						li: a(href='#{url + val}'): #[img(src='/img/icons/folder.png')] #{val}
+						li: a(href='#{url + val}') #[img(src='/img/icons/folder.png')] #{val}
 
-			.col-md-9
+			.col-xs-12.col-sm-9
 				h3 Files
 				ul.no-style
 					if files.length != 0

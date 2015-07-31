@@ -1,7 +1,8 @@
+//shows all documents in public/docs
+
 var express = require('express');
 var	router = express.Router();
 var glob = require('glob');
-//var	db = require('../models');
 
 module.exports = function(app) {
 	app.use('/', router);
@@ -17,7 +18,7 @@ router.get('/documents*', function serveDocsHome(req, res) {
 
 	//for moving up a directory
 	var goUp = false;
-	var folderName = 'Directory';
+	var folderName = 'Home';
 	if (req.originalUrl != '/documents') {
 		var end = req.originalUrl.lastIndexOf('/');
 		folderName = req.originalUrl.substr(end + 1);
