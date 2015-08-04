@@ -3,7 +3,7 @@ $(function() {
     var $sidebar   = $(".sidebar"), 
         $window    = $(window),
         offset     = $sidebar.offset(),
-        topPadding = 15;
+        topPadding = 16;
 
     $window.scroll(function() {
         if ($window.scrollTop() > offset.top) {

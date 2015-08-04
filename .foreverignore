@@ -1,0 +1,5 @@
+*.jade
+*.out
+public
+.git
+.gitignore

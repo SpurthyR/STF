@@ -1,8 +1,8 @@
 var express = require('express');
 var	router = express.Router();
 var	db = require('../models');
+var session = require("express-session");
 var passport = require('passport');
-var saml = require('passport-saml');
 
 module.exports = function(app) {
 	app.use('/', router);

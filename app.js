@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser'); //no explanation needed
 var bodyParser = require('body-parser'); //parses json, html, etc to html
 var compress = require('compression'); //compresses files and output to users
 var passport = require('passport'); //user authentication
+var shib = require('passport-uwshib'); //for shiubboleth authentication
+var session = require('express-session'); //for user sessions
 
 var config = require('./config/config'); //configuration file 
 var db = require('./app/models'); //database connections
@@ -19,7 +21,7 @@ var env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
 
-//app.use(favicon(config.root + '/public/img/favicon.ico')); //fails
+app.use(favicon('/STF/public/img/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -46,19 +48,57 @@ controllers.forEach(function assignController(controller) {
 	require(controller)(app);
 });
 
-/*var SamlStrategy = require('passport-saml').Strategy;
-passport.use(new SamlStrategy(
-	{
-		path
-	})
-);*/
-
 
 app.use(function fileNotFound(req, res, next) {
 	var err = new Error('Not Found');
 	err.status = 404;
 	next(err);
 });
+
+
+
+
+
+
+
+
+/*
+
+
+var domain = process.env.DOMAIN
+if (!domain || domain.length == 0) {
+	throw new Error('Specify a domain variable!');
+}
+
+var publicCert = fs.readFileSync('./security/server-cert.pem', 'utf-8');
+var privateKey = fs.readFileSync('./security/server-pvk.pem', 'utf-8');
+
+var strategy = new shib.Strategy({
+    entityId: process.env.DOMAIN,
+    privateKey: privateKey,
+    callbackUrl: loginCallbackUrl,
+    domain: domain
+});
+
+passport.use(strategy);
+
+//shibboleth metadata response
+app.get(shib.urls.metadata, shib.metadataRoute(strategy, publicCert));
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
 
 //if we're in development, give verbose errors
 if(app.get('env') === 'development'){
